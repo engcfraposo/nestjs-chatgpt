@@ -12,7 +12,7 @@ To use the ChatGptService, you will first need to import it and the CreateChatgp
 
 
 ```ts
-import { ChatGptService } from '@nestjs/chatgpt';
+import { ChatGptService } from 'nestjs-chatgpt';
 
 ```
 

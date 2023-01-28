@@ -1,16 +1,21 @@
 {
-  "name": "@nestjs/chatgpt",
-  "version": "1.0.0",
+  "name": "nestjs-chatgpt",
+  "version": "1.0.1",
+  "homepage": "https://github.com/engcfraposo/-nestjs-chatgpt",
+  "email": "engcfraposo@gmail.com",
   "description": "NestJS module for interacting with the OpenAI's ChatGPT API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist && tsc",
-    "prepublish": "npm run build",
-    "publish": "npm publish --access=public"
+    "prepublish": "npm run build"
   },
-  "keywords": ["chatgpt", "openai", "nestjs"],
+  "keywords": [
+    "chatgpt",
+    "openai",
+    "nestjs"
+  ],
   "author": "engcfrapooso",
   "license": "MIT",
   "dependencies": {
@@ -18,8 +23,13 @@
     "@nestjs/mapped-types": "*",
     "@types/node": "^18.11.18",
     "axios": "^1.2.5",
+    "luaparse": "^0.3.1",
     "rimraf": "^4.1.2",
     "rxjs": "^7.8.0",
     "typescript": "^4.9.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engcfraposo/-nestjs-chatgpt.git"
   }
 }
