@@ -1,0 +1,24 @@
+{
+  "name": "@nestjs/chatgpt",
+  "version": "1.0.0",
+  "description": "NestJS module for interacting with the OpenAI's ChatGPT API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && tsc",
+    "prepublish": "npm run build"
+  },
+  "keywords": ["chatgpt", "openai", "nestjs"],
+  "author": "engcfrapooso",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^9.2.1",
+    "@nestjs/mapped-types": "*",
+    "@types/node": "^18.11.18",
+    "axios": "^1.2.5",
+    "rimraf": "^4.1.2",
+    "rxjs": "^7.8.0",
+    "typescript": "^4.9.4"
+  }
+}
