@@ -1,7 +1,7 @@
 {
   "name": "nestjs-chatgpt",
-  "version": "1.0.1",
-  "homepage": "https://github.com/engcfraposo/-nestjs-chatgpt",
+  "version": "1.0.2",
+  "homepage": "https://github.com/engcfraposo/nestjs-chatgpt",
   "email": "engcfraposo@gmail.com",
   "description": "NestJS module for interacting with the OpenAI's ChatGPT API",
   "main": "dist/index.js",
