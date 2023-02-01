@@ -1,6 +1,6 @@
 {
   "name": "nestjs-chatgpt",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "homepage": "https://github.com/engcfraposo/nestjs-chatgpt",
   "email": "engcfraposo@gmail.com",
   "description": "NestJS module for interacting with the OpenAI's ChatGPT API",
@@ -16,7 +16,7 @@
     "openai",
     "nestjs"
   ],
-  "author": "engcfrapooso",
+  "author": "engcfraposo",
   "license": "MIT",
   "dependencies": {
     "@nestjs/common": "^9.2.1",
@@ -27,9 +27,5 @@
     "rimraf": "^4.1.2",
     "rxjs": "^7.8.0",
     "typescript": "^4.9.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/engcfraposo/-nestjs-chatgpt.git"
   }
 }
