@@ -1,7 +1,7 @@
-import { DynamicModule, Module } from '@nestjs/common';
+import { DynamicModule, Global, Module } from '@nestjs/common';
 import { ChatGptService } from './chatgpt.service';
 
-
+@Global()
 @Module({
   exports: [ChatGptService],
   providers: [ChatGptService]
