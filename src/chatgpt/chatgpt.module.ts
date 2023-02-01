@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { DynamicModule, Module } from '@nestjs/common';
 import { ChatGptService } from './chatgpt.service';
 
 
@@ -6,4 +6,18 @@ import { ChatGptService } from './chatgpt.service';
   exports: [ChatGptService],
   providers: [ChatGptService]
 })
-export class ChatGptModule {}
+export class ChatGptModule {
+  static forRoot(apiKey: string): DynamicModule {
+    return {
+      module: ChatGptModule,
+      providers: [
+        {
+          provide: ChatGptService,
+          useFactory: () => {
+            return new ChatGptService(apiKey);
+          },
+        },
+      ],
+    };
+  }
+}

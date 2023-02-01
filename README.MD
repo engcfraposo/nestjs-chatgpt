@@ -24,6 +24,17 @@ import { Injectable } from '@nestjs/common';
 
 ```
 
+in your module you have to include the apiKey in forRoot method:
+
+```ts
+@Module({
+  imports: [ChatGptModule.forRoot('Your apiKey')],
+})
+export class AppModule {}
+
+```
+
+
 You can then use the ChatGptService in a controller or another service by injecting it with the @Injectable() decorator:
 
 
@@ -32,8 +43,22 @@ You can then use the ChatGptService in a controller or another service by inject
 export class MyController {
   constructor(private readonly chatGptService: ChatGptService) {}
 
-  async generateText(prompt: string, apiKey: string): Promise<string> {
-    const createChatgptDto: CreateChatgptDto = { prompt, apiKey };
+  async generateText(prompt: string): Promise<string> {
+    const createChatgptDto: CreateChatgptDto = { prompt };
+    return this.chatGptService.generateTextGPT3(createChatgptDto);
+  }
+}
+
+
+```
+
+```ts
+@Injectable()
+export class MyController {
+  constructor(private readonly chatGptService: ChatGptService) {}
+
+  async generateText(prompt: string, model: string, apiKey: string): Promise<string> {
+    const createChatgptDto: CreateChatgptDto = { prompt, model };
     return this.chatGptService.generateText(createChatgptDto);
   }
 }
@@ -44,10 +69,16 @@ export class MyController {
 You can then use the generateText method in your controller or service to generate text for the provided prompt:
 
 
+```ts
+@Injectable()
+const generatedTextGPT3 = await this.generateTextGPT3('What is the meaning of life?', 'my-api-key');
+console.log(generatedText);
+
+```
 
 ```ts
 @Injectable()
-const generatedText = await this.generateText('What is the meaning of life?', 'my-api-key');
+const generatedTextGPT3 = await this.generateText('What is the meaning of life?', 'text-davinci-003','my-api-key');
 console.log(generatedText);
 
 ```
